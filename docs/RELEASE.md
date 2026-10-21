@@ -1,0 +1,15 @@
+# Release checklist and rollback
+
+By Jason Stys. Manual packaging creates a draft only. This is an unsigned portable application release, not production hosting or a privileged installer.
+
+Before any Actions work, inspect current artifact inventory and the available account meter privately; distinguish accrued billing, live bytes and separate caches. No deletion/retention/billing change is authorized by an old cleanup approval. These workflows upload **no Actions artifacts or caches**. Direct GitHub release assets are separate.
+
+Pre-release: review scientific provenance/limits, original response hashes, strict schema, missingness, issue/revision selection and no-causality claims. Run strict Python lint/format/types, coverage, finite/property/manual arithmetic tests, exact contract/index checks, browser unit/build/format/audit and actual three-engine acceptance. Package and run the actual frozen app, including original NOAA resources. Keep screenshots and validation observations current; never invent future CI success.
+
+Push reviewed source. Require Validation and CodeQL **on the exact commit**. Inspect open code-scanning alerts, not just workflow conclusions. `Portable release` is manually dispatched on main with a new digits.digits.digits version. Preparation validates the version, checks exact-source passing runs and creates a new draft target. Each platform builds the UI/frozen app, executes real export/server/resource smoke, creates ZIP/SHA-256, then uploads its pair directly to the draft. Existing tags/assets are not overwritten.
+
+All three build jobs and preparation must pass. Download every ZIP and checksum into a new private verification directory, verify all three hashes against manifests and asset digests, extract the Windows bundle here and run its actual smoke plus input/history round trip. Linux/macOS execution is native CI evidence, not a claim they ran on this Windows PC. Review source/tag alignment, all six assets, source/guide links and unsigned architecture limitations. Record exact final source SHA, workflow links, results and ZIP hashes in release notes; only then publish the draft.
+
+Targets are native Windows AMD64, Linux x86_64 and macOS ARM64 CI environments—not universal or mobile installers. No signing/notarization or byte-identical reproducible executable claim is made. Do not bypass endpoint protection, remove quarantine, elevate, or change security settings to test a bundle. A blocked unsigned bundle can be tested through reviewed source/CI with the limitation reported.
+
+Rollback: stop only the owned app, preserve local exports/history privately, and use an earlier verified version in a separate directory. There are no auto-updates, migrations, global installation or system services. Do not overwrite a running bundle, rewrite a published tag/checksum, delete history or change reviewed evidence hashes merely to hide a failure. Changes need fresh full gates and a new release. Current tests/limits are in [VALIDATION](VALIDATION.md).

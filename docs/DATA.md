@@ -1,0 +1,20 @@
+# Sources and snapshot provenance
+
+By Jason Stys. **NOAA observations are distinct from every synthetic health/forecast example.** No applicant, private portfolio, user account or real spacecraft-health information is included.
+
+The two original public responses were retrieved on **2026-10-21 UTC**. Exact time-of-day issuance is not supplied or inferred. The fixed observed interval is 2026-10-14 00:00 UTC through 2026-10-20 21:00 UTC (56 three-hour estimates). The fixed forecast response contains observed/estimated entries and 17 predicted entries; only predicted entries become forecast candidates. Forecast issue time is null. Product timestamps are adapted from SWPC's UTC convention to explicit trailing Z for this app's strict contract.
+
+| Original response                                                                                                                 | SHA-256                                                            |
+| --------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| [Observed product](https://services.swpc.noaa.gov/products/noaa-planetary-k-index.json) → `resources/noaa-observed.json`          | `42191253ee6da5adc6d9081fed6cf66b626e138aa8d54337f029551e53bc6f36` |
+| [Forecast product](https://services.swpc.noaa.gov/products/noaa-planetary-k-index-forecast.json) → `resources/noaa-forecast.json` | `c0f19acd4c895b795ee88f5143a3aa76dac659f4e88ca85fde8b36b4482fc491` |
+
+Files are unmodified provider-response bytes and excluded from Prettier/Git text conversion. Metadata is `weatherlab/resources/snapshot.json`; the adapter verifies both checksums before use. During development, formatting changed raw bytes; the gate correctly stopped the snapshot. The originals were re-fetched, and the then-current forecast response and retrieval date were recorded before freezing reviewed report contracts. The app and CI never fetch or silently update source data. Live URLs can now contain different records; reproduce results from the committed snapshot, not a current download.
+
+NOAA describes this rapid Kp product as estimated and explains its ground magnetometer network and planetary—not local—meaning. It is not presented here as definitive GFZ data, local radiation, or a specific mission's measurements. [Product definition](https://www.swpc.noaa.gov/products/planetary-k-index), [NOAA scales background](https://www.swpc.noaa.gov/noaa-scales-explanation).
+
+NWS says its web information is public domain unless noted, with conditions against claiming authorship, implying endorsement, or presenting modified content as official. Attribution is retained, no government logos are used, and original government data is excluded from the author's MIT copyright claim. [NWS reuse/disclaimer](https://www.weather.gov/disclaimer/). Underlying collaborating magnetometer organizations are acknowledged in NOAA's product page; their independently hosted data is not copied as a separate dataset here.
+
+All other cases and the editable `examples/synthetic-storm.json` are invented by Jason Stys. The dates are labels for exercising UTC arithmetic, not a reconstruction of the May 2024 storm. Dropped-frame counts and forecasts are not fitted to a spacecraft, independently observed, calibrated or validated against physical effects. The NOAA case has **no health overlay**. A local import gets `unverified local input` provenance even when its name says `noaa-snapshot`.
+
+To refresh intentionally: obtain the current public responses in a new reviewed change, record retrieval date/URLs/hashes, inspect format and quality changes, update exact endpoint expectations and all evidence contracts only after explaining differences, rerun all gates and publish a new version. Do not rebaseline an unexplained scientific or numerical regression. Do not train models or add an online connector under this snapshot-only contract without new provenance/licensing and validation review.

@@ -1,0 +1,235 @@
+{
+  "cases": [
+    {
+      "association": {
+        "high_count": 0,
+        "high_mean_drops": null,
+        "lag_hours": 0,
+        "low_count": 0,
+        "low_mean_drops": null,
+        "r": null,
+        "status": "insufficient-pairs",
+        "warning": "Descriptive only; no causal conclusion, p-value, confidence interval or physical impact model."
+      },
+      "id": "107987f5fd5a0818d9088a2a3e716cca4721dc0a2171654877b667f0c18ba044",
+      "scenario": "noaa-snapshot",
+      "scores": {
+        "bias": null,
+        "confusion": {
+          "false_negative": 0,
+          "false_positive": 0,
+          "true_negative": 0,
+          "true_positive": 0
+        },
+        "excluded": 17,
+        "mae": null,
+        "rmse": null,
+        "scored": 0,
+        "statuses": {
+          "unknown-issuance": 17
+        }
+      },
+      "totals": {
+        "available": 56,
+        "bins": 56,
+        "estimated": 56,
+        "events": 0,
+        "missing": 0,
+        "paired": 0
+      }
+    },
+    {
+      "association": {
+        "high_count": 6,
+        "high_mean_drops": 9.833333333,
+        "lag_hours": 0,
+        "low_count": 10,
+        "low_mean_drops": 2.4,
+        "r": 0.934550701,
+        "status": "descriptive-only",
+        "warning": "Descriptive only; no causal conclusion, p-value, confidence interval or physical impact model."
+      },
+      "id": "5821e71729af7b992007481433dbb6e8c2fbe26fef83261abc7f698217ef93bd",
+      "scenario": "synthetic-storm",
+      "scores": {
+        "bias": -1.0,
+        "confusion": {
+          "false_negative": 1,
+          "false_positive": 0,
+          "true_negative": 10,
+          "true_positive": 5
+        },
+        "excluded": 0,
+        "mae": 1.0,
+        "rmse": 1.0,
+        "scored": 16,
+        "statuses": {
+          "scored": 16
+        }
+      },
+      "totals": {
+        "available": 16,
+        "bins": 16,
+        "estimated": 0,
+        "events": 6,
+        "missing": 0,
+        "paired": 16
+      }
+    },
+    {
+      "association": {
+        "high_count": 4,
+        "high_mean_drops": 8.75,
+        "lag_hours": 0,
+        "low_count": 7,
+        "low_mean_drops": 2.0,
+        "r": 0.926078393,
+        "status": "descriptive-only",
+        "warning": "Descriptive only; no causal conclusion, p-value, confidence interval or physical impact model."
+      },
+      "id": "748ca95e70aa935cfec3b3a377df26866e425dea02ceb7809de7ff4c674ecaaa",
+      "scenario": "missing-bins",
+      "scores": {
+        "bias": -1.0,
+        "confusion": {
+          "false_negative": 1,
+          "false_positive": 0,
+          "true_negative": 9,
+          "true_positive": 3
+        },
+        "excluded": 3,
+        "mae": 1.0,
+        "rmse": 1.0,
+        "scored": 13,
+        "statuses": {
+          "missing-observation": 3,
+          "scored": 13
+        }
+      },
+      "totals": {
+        "available": 13,
+        "bins": 16,
+        "estimated": 1,
+        "events": 4,
+        "missing": 3,
+        "paired": 11
+      }
+    },
+    {
+      "association": {
+        "high_count": 6,
+        "high_mean_drops": 9.833333333,
+        "lag_hours": 0,
+        "low_count": 10,
+        "low_mean_drops": 2.4,
+        "r": 0.934550701,
+        "status": "descriptive-only",
+        "warning": "Descriptive only; no causal conclusion, p-value, confidence interval or physical impact model."
+      },
+      "id": "3f5c4d218b909856e28194a8a64ba86ca54fbac36f71b2d81d08cdd6647860ed",
+      "scenario": "forecast-revisions",
+      "scores": {
+        "bias": -1.0625,
+        "confusion": {
+          "false_negative": 1,
+          "false_positive": 0,
+          "true_negative": 10,
+          "true_positive": 5
+        },
+        "excluded": 4,
+        "mae": 1.0625,
+        "rmse": 1.089724736,
+        "scored": 16,
+        "statuses": {
+          "missing-observation": 1,
+          "not-before-target": 1,
+          "scored": 16,
+          "superseded": 1,
+          "unknown-issuance": 1
+        }
+      },
+      "totals": {
+        "available": 16,
+        "bins": 16,
+        "estimated": 0,
+        "events": 6,
+        "missing": 0,
+        "paired": 16
+      }
+    },
+    {
+      "association": {
+        "high_count": 0,
+        "high_mean_drops": null,
+        "lag_hours": 0,
+        "low_count": 16,
+        "low_mean_drops": 3.0,
+        "r": null,
+        "status": "constant-series",
+        "warning": "Descriptive only; no causal conclusion, p-value, confidence interval or physical impact model."
+      },
+      "id": "afa0921e1d16931d055b3e3b8f7ca2b4f66da4acd755c50b3030cc01e3b006aa",
+      "scenario": "flat-signal",
+      "scores": {
+        "bias": 1.0,
+        "confusion": {
+          "false_negative": 0,
+          "false_positive": 5,
+          "true_negative": 11,
+          "true_positive": 0
+        },
+        "excluded": 0,
+        "mae": 2.125,
+        "rmse": 2.738612788,
+        "scored": 16,
+        "statuses": {
+          "scored": 16
+        }
+      },
+      "totals": {
+        "available": 16,
+        "bins": 16,
+        "estimated": 0,
+        "events": 0,
+        "missing": 0,
+        "paired": 16
+      }
+    },
+    {
+      "association": {
+        "high_count": 0,
+        "high_mean_drops": null,
+        "lag_hours": 0,
+        "low_count": 0,
+        "low_mean_drops": null,
+        "r": null,
+        "status": "insufficient-pairs",
+        "warning": "Descriptive only; no causal conclusion, p-value, confidence interval or physical impact model."
+      },
+      "id": "ce2aed6051caff83e929dd5154afed4ada2bce9c55a0e1a8c923d7fec4f19159",
+      "scenario": "empty-window",
+      "scores": {
+        "bias": null,
+        "confusion": {
+          "false_negative": 0,
+          "false_positive": 0,
+          "true_negative": 0,
+          "true_positive": 0
+        },
+        "excluded": 0,
+        "mae": null,
+        "rmse": null,
+        "scored": 0,
+        "statuses": {}
+      },
+      "totals": {
+        "available": 0,
+        "bins": 16,
+        "estimated": 0,
+        "events": 0,
+        "missing": 16,
+        "paired": 0
+      }
+    }
+  ]
+}

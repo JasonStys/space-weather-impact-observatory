@@ -1,0 +1,12 @@
+{
+  "retrieved_utc_date": "2026-10-21",
+  "observations": {
+    "url": "https://services.swpc.noaa.gov/products/noaa-planetary-k-index.json",
+    "sha256": "42191253ee6da5adc6d9081fed6cf66b626e138aa8d54337f029551e53bc6f36"
+  },
+  "forecasts": {
+    "url": "https://services.swpc.noaa.gov/products/noaa-planetary-k-index-forecast.json",
+    "sha256": "c0f19acd4c895b795ee88f5143a3aa76dac659f4e88ca85fde8b36b4482fc491"
+  },
+  "notice": "Original NOAA SWPC responses, not current conditions or definitive GFZ Kp. Retrieval time is not forecast issuance time. No mission-health data was downloaded."
+}

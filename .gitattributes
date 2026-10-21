@@ -1,0 +1,6 @@
+# Jason Stys: stable source text and binary image handling across supported platforms.
+* text=auto eol=lf
+weatherlab/resources/noaa-observed.json -text
+weatherlab/resources/noaa-forecast.json -text
+*.png binary
+*.jpg binary
