@@ -15,6 +15,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `docs/API.md` — # API and input/output contracts
 - `docs/ARCHITECTURE.md` — # Architecture and decisions
 - `docs/DATA.md` — # Sources and snapshot provenance
+- `docs/FORECAST_COMPARISON.md` — # Compare forecast lead and coverage
 - `docs/MODEL.md` — # Model, metrics and scientific limits
 - `docs/RELEASE.md` — # Release checklist and rollback
 - `docs/THIRD_PARTY.md` — # Third-party material and redistribution
@@ -22,6 +23,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `docs/VALIDATION.md` — # Validation plan and observed evidence
 - `docs/images/analysis.jpg` — Binary screenshot asset from local application validation
 - `docs/images/overview.jpg` — Binary screenshot asset from local application validation
+- `docs/reports/PRACTICAL_WORKFLOWS_20261109.md` — # Lead/window comparison validation — 2026-11-09
 - `docs/reports/benchmark.json` — Reviewed deterministic report identities and metrics for all bundled cases.
 - `examples/synthetic-storm.json` — Editable strict JSON case with invented Kp, forecasts and dropped-frame records.
 - `launcher.py` — """Portable application entry point by Jason Stys; main and argv: docs/CODE_INDEX.md.
@@ -34,6 +36,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `requirements-dev.lock` — Universal pinned development/build graph with distribution hashes.
 - `requirements.in` — Standard-library-only Python runtime declaration (no third-party runtime packages).
 - `requirements.lock` — Empty runtime lock: this service uses only the CPython standard library.
+- `tests/test_comparison.py` — """Manual lead/window arithmetic contracts by Jason Stys.
 - `tests/test_engine.py` — """Independent arithmetic, finite-grid and property verification by Jason Stys.
 - `tests/test_io.py` — """CLI, report, SQLite and actual loopback HTTP integration tests by Jason Stys.
 - `tests/test_model.py` — """Schema, duplicate, range, UTC and import-boundary tests by Jason Stys.

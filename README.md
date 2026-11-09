@@ -1,5 +1,7 @@
 # Space Weather Impact Observatory
 
+Compare forecast verification at **3/12/24-hour minimum lead cutoffs** over the whole target window and declared earlier/later halves. Coverage denominators, missing truth, exact selected issuance records and undefined errors travel with each result; revisions are never selected by their error. See [the forecast comparison guide](docs/FORECAST_COMPARISON.md).
+
 **Signals. Evidence. Context.** An offline analysis application designed and engineered by [Jason Stys](https://github.com/JasonStys).
 
 [![Validation](https://github.com/JasonStys/space-weather-impact-observatory/actions/workflows/validate.yml/badge.svg)](https://github.com/JasonStys/space-weather-impact-observatory/actions/workflows/validate.yml)

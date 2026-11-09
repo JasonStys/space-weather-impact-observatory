@@ -8,7 +8,7 @@ import hashlib
 import json
 import math
 from collections import Counter
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, replace
 from pathlib import Path
 from typing import Any
 
@@ -251,6 +251,66 @@ def assess_forecasts(case: Case, settings: Settings) -> tuple[list[dict[str, Any
     return rows, metrics
 
 
+def forecast_comparison(case: Case, settings: Settings) -> list[dict[str, Any]]:
+    """Compare fixed lead gates and disjoint half-windows with explicit coverage denominators.
+
+    A row represents one minimum-lead cutoff, not a disjoint lead bucket. The same target can
+    appear at multiple cutoffs; never pool these rows as independent forecasts. Split windows
+    follow target UTC, not issue UTC, and an odd final bin belongs to the later half.
+    """
+    result = []
+    for label, first, end in (
+        ("whole", 0, case.bins),
+        ("earlier", 0, case.bins // 2),
+        ("later", case.bins // 2, case.bins),
+    ):
+        start_time = stamp(instant(case.start) + first * STEP)
+        end_time = stamp(instant(case.start) + end * STEP)
+        available = sum(
+            o.kp is not None and start_time <= o.time < end_time for o in case.observations
+        )
+        subset = replace(
+            case, forecasts=tuple(f for f in case.forecasts if start_time <= f.target < end_time)
+        )
+        for lead in CHOICES["lead_hours"]:
+            rows, scores = assess_forecasts(subset, replace(settings, lead_hours=lead))
+            result.append(
+                {
+                    "window": label,
+                    "start": start_time,
+                    "end_exclusive": end_time,
+                    "minimum_lead_hours": lead,
+                    "bins": end - first,
+                    "available_observations": available,
+                    "missing_observations": end - first - available,
+                    "forecast_targets": len({f.target for f in subset.forecasts}),
+                    "issuance_eligible_targets": len(
+                        {
+                            r["target"]
+                            for r in rows
+                            if r["status"] in {"scored", "superseded", "missing-observation"}
+                        }
+                    ),
+                    "observation_coverage": round(available / (end - first), 9)
+                    if end > first
+                    else None,
+                    "scored_bin_coverage": round(scores["scored"] / (end - first), 9)
+                    if end > first
+                    else None,
+                    "scored_observation_coverage": round(scores["scored"] / available, 9)
+                    if available
+                    else None,
+                    "scores": scores,
+                    "selected": [
+                        {"target": r["target"], "issued": r["issued"], "error": r["error"]}
+                        for r in rows
+                        if r["status"] == "scored"
+                    ],
+                }
+            )
+    return result
+
+
 def analyze(case: Case, settings: Settings, provenance: dict[str, Any]) -> dict[str, Any]:
     """Perform exact UTC sparse joins, preserving missingness and displaying selected lag explicitly."""
     obs = {o.time: o for o in case.observations}
@@ -317,6 +377,7 @@ def analyze(case: Case, settings: Settings, provenance: dict[str, Any]) -> dict[
         "rows": rows,
         "forecasts": forecasts,
         "scores": scores,
+        "forecast_comparison": forecast_comparison(case, settings),
     }
     result["id"] = run_id(result)
     return result

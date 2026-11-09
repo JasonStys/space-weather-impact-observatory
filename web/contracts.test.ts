@@ -73,6 +73,7 @@ describe("response envelope", () => {
       forecasts: [],
       totals: {},
       scores: {},
+      forecast_comparison: Array(9).fill({}),
       association: {},
       window: {},
       provenance: {},
@@ -82,5 +83,7 @@ describe("response envelope", () => {
     expect(isReport(sample)).toBe(true);
     expect(isReport({ ...sample, rows: [null] })).toBe(false);
     expect(isReport({ ...sample, forecasts: Array(2049).fill({}) })).toBe(false);
+    expect(isReport({ ...sample, forecast_comparison: [] })).toBe(false);
+    expect(isReport({ ...sample, forecast_comparison: Array(9).fill(null) })).toBe(false);
   });
 });
