@@ -62,6 +62,22 @@ export interface Report {
   };
   rows: Bin[];
   forecasts: Forecast[];
+  forecast_comparison: {
+    window: string;
+    start: string;
+    end_exclusive: string;
+    minimum_lead_hours: number;
+    bins: number;
+    available_observations: number;
+    missing_observations: number;
+    forecast_targets: number;
+    issuance_eligible_targets: number;
+    observation_coverage: number | null;
+    scored_bin_coverage: number | null;
+    scored_observation_coverage: number | null;
+    scores: Report["scores"];
+    selected: { target: string; issued: string; error: number }[];
+  }[];
   limitations: string[];
 }
 export const scenarios: Record<string, string> = {
@@ -118,7 +134,10 @@ export function isReport(value: unknown): value is Report {
       (key) => !!row[key] && typeof row[key] === "object",
     ) &&
     Array.isArray(row.limitations) &&
-    row.limitations.every((x) => typeof x === "string")
+    row.limitations.every((x) => typeof x === "string") &&
+    Array.isArray(row.forecast_comparison) &&
+    row.forecast_comparison.length === 9 &&
+    row.forecast_comparison.every((x) => !!x && typeof x === "object")
   );
 }
 /** Finite preferences only; inherited names, booleans, extra fields and coercions are rejected. */

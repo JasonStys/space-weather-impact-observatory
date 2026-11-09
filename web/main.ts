@@ -112,6 +112,46 @@ function render(): void {
         .map(([key, value]) => `<span class="status-chip">${escape(key)} · ${escape(value)}</span>`)
         .join(" ") || "No forecast records supplied."
     }</p><details><summary>Inspect forecast revisions and exclusion reasons</summary><div tabindex="0" role="region" aria-label="Forecast ledger" class="table-scroll"><table><thead><tr><th>Target UTC</th><th>Issued UTC</th><th>Kp</th><th>Lead h</th><th>Status</th><th>Error</th></tr></thead><tbody>${r.forecasts.map((f) => `<tr><td>${escape(f.target)}</td><td>${f.issued === null ? "Unknown" : escape(f.issued)}</td><td>${display(f.kp)}</td><td>${display(f.lead_hours)}</td><td>${escape(f.status)}</td><td>${display(f.error)}</td></tr>`).join("")}</tbody></table></div></details></section><section class="panel"><div class="section-head"><div><p class="eyebrow">04 / BIN LEDGER</p><h2>Every bin has a story.</h2></div><label>Show bins<select id="filter"><option value="all">All bins</option><option value="missing">Missing weather</option><option value="events">Threshold events</option><option value="paired">Paired health</option></select></label></div><p>Filtering does not change full-window metrics or downloads.</p><div id="ledger"></div><div id="inspector" class="inspector" aria-live="polite"></div></section><section class="panel"><div class="section-head"><div><p class="eyebrow">05 / REPRODUCIBLE EVIDENCE</p><h2>Take the context with you.</h2></div></div><div class="downloads">${["json", "csv", "html", "input"].map((format) => `<a href="/api/report?${query}&format=${format}" download>${format === "input" ? "Input JSON" : format.toUpperCase() + " report"} ↓</a>`).join("")}</div><p class="digest">CONTENT SHA-256<br>${escape(r.id)}</p><details><summary>Provenance, source snapshot and limitations</summary><pre>${escape(JSON.stringify(r.provenance, null, 2))}</pre><ul>${r.limitations.map((text) => `<li>${escape(text)}</li>`).join("")}</ul></details></section>`;
+  const comparison = document.createElement("section");
+  comparison.className = "panel";
+  comparison.id = "forecast-comparison";
+  const heading = document.createElement("h2");
+  heading.textContent = "Lead-time and window comparison";
+  const explanation = document.createElement("p");
+  explanation.textContent =
+    "Each row uses the latest eligible revision at a minimum 3, 12 or 24-hour lead. These are overlapping cutoffs, not independent samples. Earlier/later are disjoint target-time halves; an odd final bin belongs to later. Coverage is scored targets / all bins, with observed denominators shown separately. Window differences describe this dataset, not forecast skill significance.";
+  const scroll = document.createElement("div");
+  scroll.className = "table-scroll";
+  scroll.tabIndex = 0;
+  scroll.setAttribute("role", "region");
+  scroll.setAttribute("aria-label", "Forecast coverage comparison");
+  const table = document.createElement("table");
+  table.innerHTML =
+    "<thead><tr><th>Window / UTC [start, end)</th><th>Minimum lead h</th><th>Observed / bins</th><th>Issue-eligible targets</th><th>Scored / observed</th><th>Scored / bins</th><th>MAE</th><th>RMSE</th><th>Bias</th></tr></thead>";
+  const body = document.createElement("tbody");
+  for (const entry of r.forecast_comparison) {
+    const row = document.createElement("tr");
+    for (const value of [
+      `${entry.window} · ${entry.start} → ${entry.end_exclusive}`,
+      String(entry.minimum_lead_hours),
+      `${entry.available_observations} / ${entry.bins}`,
+      String(entry.issuance_eligible_targets),
+      `${entry.scores.scored} / ${entry.available_observations}`,
+      `${entry.scores.scored} / ${entry.bins} (${entry.scored_bin_coverage === null ? "undefined" : (100 * entry.scored_bin_coverage).toFixed(1) + "%"})`,
+      display(entry.scores.mae, 3),
+      display(entry.scores.rmse, 3),
+      display(entry.scores.bias, 3),
+    ]) {
+      const cell = document.createElement("td");
+      cell.textContent = value;
+      row.append(cell);
+    }
+    body.append(row);
+  }
+  table.append(body);
+  scroll.append(table);
+  comparison.append(heading, explanation, scroll);
+  document.querySelector("#evidence")!.append(comparison);
   document.querySelector("#filter")!.addEventListener("change", (event) => {
     filter = (event.target as HTMLSelectElement).value;
     bind();

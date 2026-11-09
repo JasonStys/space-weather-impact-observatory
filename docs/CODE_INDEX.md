@@ -35,6 +35,29 @@ Line numbers refer to formatted source, not this generated document.
 | 30 | `timeout` |
 | 33 | `projects` |
 
+## tests/test_comparison.py
+
+| Line | Definition / variable / structural identifier |
+| --- | --- |
+| 13 | `definition case` |
+| 36 | `definition test_manual_revision_scores_and_coverage` |
+| 38 | `variable rows` |
+| 39 | `variable day` |
+| 39 | `variable three` |
+| 39 | `variable twelve` |
+| 53 | `definition test_half_open_windows_partition_targets_without_pooling_revisions` |
+| 55 | `variable rows` |
+| 56 | `variable offset` |
+| 57 | `variable early` |
+| 57 | `variable late` |
+| 57 | `variable whole` |
+| 61 | `variable r` |
+| 67 | `definition test_empty_half_and_unknown_issuance_do_not_inflate_skill` |
+| 69 | `variable single` |
+| 70 | `variable rows` |
+| 74 | `variable report` |
+| 77 | `variable r` |
+
 ## tests/test_engine.py
 
 | Line | Definition / variable / structural identifier |
@@ -253,19 +276,20 @@ Line numbers refer to formatted source, not this generated document.
 
 | Line | Definition / variable / structural identifier |
 | --- | --- |
-| 54 | `label` |
-| 55 | `link` |
-| 56 | `href` |
-| 57 | `response` |
-| 61 | `body` |
-| 66 | `body` |
-| 105 | `response` |
-| 106 | `body` |
-| 121 | `dimensions` |
-| 122 | `width` |
-| 123 | `scroll` |
-| 126 | `chart` |
-| 129 | `results` |
+| 31 | `report` |
+| 76 | `label` |
+| 77 | `link` |
+| 78 | `href` |
+| 79 | `response` |
+| 83 | `body` |
+| 88 | `body` |
+| 127 | `response` |
+| 128 | `body` |
+| 143 | `dimensions` |
+| 144 | `width` |
+| 145 | `scroll` |
+| 148 | `chart` |
+| 151 | `results` |
 
 ## tools/benchmark.py
 
@@ -534,48 +558,67 @@ Line numbers refer to formatted source, not this generated document.
 | 245 | `variable e` |
 | 246 | `variable e` |
 | 249 | `variable r` |
-| 254 | `definition analyze` |
+| 254 | `definition forecast_comparison` |
 | 254 | `parameter case` |
-| 254 | `parameter provenance` |
 | 254 | `parameter settings` |
-| 256 | `variable o` |
-| 256 | `variable obs` |
-| 257 | `variable h` |
-| 257 | `variable health` |
-| 258 | `variable pairs` |
-| 258 | `variable rows` |
-| 259 | `variable high` |
-| 260 | `variable low` |
-| 261 | `variable index` |
-| 262 | `variable time` |
-| 263 | `variable shifted` |
-| 264 | `variable h` |
-| 264 | `variable o` |
-| 265 | `variable kp` |
-| 266 | `variable drops` |
-| 267 | `variable quality` |
-| 268 | `variable paired` |
-| 285 | `variable r` |
-| 285 | `variable reason` |
-| 286 | `variable forecasts` |
-| 286 | `variable scores` |
-| 287 | `variable result` |
-| 301 | `variable r` |
-| 302 | `variable r` |
-| 303 | `variable r` |
-| 304 | `variable r` |
-| 325 | `definition run_id` |
-| 325 | `parameter run` |
-| 328 | `variable key` |
-| 328 | `variable value` |
-| 332 | `definition build_run` |
-| 332 | `parameter settings` |
-| 334 | `variable settings` |
-| 335 | `variable case` |
-| 335 | `variable provenance` |
-| 339 | `definition build_import` |
-| 339 | `parameter path` |
-| 339 | `parameter settings` |
+| 261 | `variable result` |
+| 262 | `variable end` |
+| 262 | `variable first` |
+| 262 | `variable label` |
+| 267 | `variable start_time` |
+| 268 | `variable end_time` |
+| 269 | `variable available` |
+| 270 | `variable o` |
+| 272 | `variable subset` |
+| 273 | `variable f` |
+| 275 | `variable lead` |
+| 276 | `variable rows` |
+| 276 | `variable scores` |
+| 286 | `variable f` |
+| 290 | `variable r` |
+| 306 | `variable r` |
+| 314 | `definition analyze` |
+| 314 | `parameter case` |
+| 314 | `parameter provenance` |
+| 314 | `parameter settings` |
+| 316 | `variable o` |
+| 316 | `variable obs` |
+| 317 | `variable h` |
+| 317 | `variable health` |
+| 318 | `variable pairs` |
+| 318 | `variable rows` |
+| 319 | `variable high` |
+| 320 | `variable low` |
+| 321 | `variable index` |
+| 322 | `variable time` |
+| 323 | `variable shifted` |
+| 324 | `variable h` |
+| 324 | `variable o` |
+| 325 | `variable kp` |
+| 326 | `variable drops` |
+| 327 | `variable quality` |
+| 328 | `variable paired` |
+| 345 | `variable r` |
+| 345 | `variable reason` |
+| 346 | `variable forecasts` |
+| 346 | `variable scores` |
+| 347 | `variable result` |
+| 361 | `variable r` |
+| 362 | `variable r` |
+| 363 | `variable r` |
+| 364 | `variable r` |
+| 386 | `definition run_id` |
+| 386 | `parameter run` |
+| 389 | `variable key` |
+| 389 | `variable value` |
+| 393 | `definition build_run` |
+| 393 | `parameter settings` |
+| 395 | `variable settings` |
+| 396 | `variable case` |
+| 396 | `variable provenance` |
+| 400 | `definition build_import` |
+| 400 | `parameter path` |
+| 400 | `parameter settings` |
 
 ## weatherlab/model.py
 
@@ -763,11 +806,12 @@ Line numbers refer to formatted source, not this generated document.
 | 73 | `forecasts` |
 | 74 | `totals` |
 | 75 | `scores` |
-| 76 | `association` |
-| 77 | `window` |
-| 78 | `provenance` |
-| 79 | `settings` |
-| 80 | `limitations` |
+| 76 | `forecast_comparison` |
+| 77 | `association` |
+| 78 | `window` |
+| 79 | `provenance` |
+| 80 | `settings` |
+| 81 | `limitations` |
 
 ## web/contracts.ts
 
@@ -827,38 +871,53 @@ Line numbers refer to formatted source, not this generated document.
 | 61 | `confusion` |
 | 63 | `rows` |
 | 64 | `forecasts` |
-| 65 | `limitations` |
-| 67 | `scenarios` |
-| 75 | `defaults` |
-| 76 | `scenario` |
-| 77 | `threshold` |
-| 78 | `lag_hours` |
-| 79 | `lead_hours` |
-| 81 | `choices` |
-| 84 | `escape` |
-| 92 | `display` |
-| 98 | `plotNumber` |
-| 104 | `isReport` |
-| 106 | `row` |
-| 125 | `parsePreferences` |
-| 127 | `value` |
-| 129 | `row` |
-| 132 | `key` |
-| 140 | `seriesSvg` |
-| 141 | `maximum` |
-| 142 | `field` |
-| 143 | `width` |
-| 144 | `height` |
-| 145 | `left` |
-| 146 | `base` |
-| 147 | `plot` |
-| 148 | `step` |
-| 149 | `bars` |
-| 151 | `value` |
-| 152 | `x` |
-| 154 | `size` |
-| 158 | `line` |
-| 159 | `field` |
+| 65 | `forecast_comparison` |
+| 66 | `window` |
+| 67 | `start` |
+| 68 | `end_exclusive` |
+| 69 | `minimum_lead_hours` |
+| 70 | `bins` |
+| 71 | `available_observations` |
+| 72 | `missing_observations` |
+| 73 | `forecast_targets` |
+| 74 | `issuance_eligible_targets` |
+| 75 | `observation_coverage` |
+| 76 | `scored_bin_coverage` |
+| 77 | `scored_observation_coverage` |
+| 78 | `scores` |
+| 79 | `selected` |
+| 81 | `limitations` |
+| 83 | `scenarios` |
+| 91 | `defaults` |
+| 92 | `scenario` |
+| 93 | `threshold` |
+| 94 | `lag_hours` |
+| 95 | `lead_hours` |
+| 97 | `choices` |
+| 100 | `escape` |
+| 108 | `display` |
+| 114 | `plotNumber` |
+| 120 | `isReport` |
+| 122 | `row` |
+| 144 | `parsePreferences` |
+| 146 | `value` |
+| 148 | `row` |
+| 151 | `key` |
+| 159 | `seriesSvg` |
+| 160 | `maximum` |
+| 161 | `field` |
+| 162 | `width` |
+| 163 | `height` |
+| 164 | `left` |
+| 165 | `base` |
+| 166 | `plot` |
+| 167 | `step` |
+| 168 | `bars` |
+| 170 | `value` |
+| 171 | `x` |
+| 173 | `size` |
+| 177 | `line` |
+| 178 | `field` |
 
 ## web/env.d.ts
 
@@ -927,16 +986,26 @@ Line numbers refer to formatted source, not this generated document.
 | 114 | `filter` |
 | 114 | `inspector` |
 | 114 | `ledger` |
-| 116 | `filter` |
-| 123 | `bind` |
-| 125 | `rows` |
-| 126 | `filter` |
-| 136 | `button` |
-| 138 | `selected` |
-| 145 | `inspect` |
-| 146 | `row` |
-| 155 | `remember` |
-| 163 | `load` |
+| 115 | `comparison` |
+| 118 | `heading` |
+| 120 | `explanation` |
+| 123 | `scroll` |
+| 128 | `table` |
+| 131 | `body` |
+| 132 | `entry` |
+| 133 | `row` |
+| 134 | `value` |
+| 145 | `cell` |
+| 156 | `filter` |
+| 163 | `bind` |
+| 165 | `rows` |
+| 166 | `filter` |
+| 176 | `button` |
+| 178 | `selected` |
+| 185 | `inspect` |
+| 186 | `row` |
+| 195 | `remember` |
+| 203 | `load` |
 
 ## web/style.css
 

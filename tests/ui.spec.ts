@@ -16,6 +16,28 @@ test("NOAA provenance and synthetic comparison are honest", async ({ page }) => 
   await expect(page.locator(".metrics article").first()).toContainText("16 / 16");
 });
 
+test("lead and half-window comparison shows coverage with unchanged exclusions", async ({
+  page,
+  request,
+}) => {
+  await page.goto("/");
+  await expect(page.locator("#evidence")).toBeVisible();
+  await expect(page.locator("#forecast-comparison tbody tr")).toHaveCount(9);
+  await expect(page.locator("#forecast-comparison")).toContainText("overlapping cutoffs");
+  await expect(page.locator("#forecast-comparison")).toContainText("Not available");
+  await page.locator("#scenario").selectOption("synthetic-storm");
+  await expect(page.locator("#status")).toContainText("Evidence ready");
+  await expect(page.locator("#forecast-comparison tbody tr").first()).toContainText("1.000");
+  const report = await (await request.get("/api/run?scenario=synthetic-storm")).json();
+  expect(report.forecast_comparison).toHaveLength(9);
+  expect(report.forecast_comparison[0].scores.scored).toBe(report.scores.scored);
+  expect(report.forecast_comparison[0].scores.scored).toBe(
+    report.forecast_comparison[3].scores.scored + report.forecast_comparison[6].scores.scored,
+  );
+  await page.locator("#scenario").selectOption("empty-window");
+  await expect(page.locator("#status")).toContainText("Evidence ready");
+  await expect(page.locator("#forecast-comparison tbody tr").first()).toContainText("0 / 16");
+});
 test("positive lag and missing filter preserve context", async ({ page }) => {
   await page.goto("/");
   await expect(page.locator("#evidence")).toBeVisible();
