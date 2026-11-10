@@ -17,12 +17,13 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `docs/DATA.md` — # Sources and snapshot provenance
 - `docs/FORECAST_COMPARISON.md` — # Compare forecast lead and coverage
 - `docs/MODEL.md` — # Model, metrics and scientific limits
-- `docs/RELEASE.md` — # Release checklist and rollback
+- `docs/RELEASE.md` — # Portable application and release runbook
 - `docs/THIRD_PARTY.md` — # Third-party material and redistribution
 - `docs/USER_GUIDE.md` — # User guide and troubleshooting
 - `docs/VALIDATION.md` — # Validation plan and observed evidence
 - `docs/images/analysis.jpg` — Binary screenshot asset from local application validation
 - `docs/images/overview.jpg` — Binary screenshot asset from local application validation
+- `docs/reports/PORTABLE_RELEASE_20261109.md` — # Portable 1.1 release validation — 2026-11-09
 - `docs/reports/PRACTICAL_WORKFLOWS_20261109.md` — # Lead/window comparison validation — 2026-11-09
 - `docs/reports/benchmark.json` — Reviewed deterministic report identities and metrics for all bundled cases.
 - `examples/synthetic-storm.json` — Editable strict JSON case with invented Kp, forecasts and dropped-frame records.
@@ -40,12 +41,20 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `tests/test_engine.py` — """Independent arithmetic, finite-grid and property verification by Jason Stys.
 - `tests/test_io.py` — """CLI, report, SQLite and actual loopback HTTP integration tests by Jason Stys.
 - `tests/test_model.py` — """Schema, duplicate, range, UTC and import-boundary tests by Jason Stys.
+- `tests/test_package_info.py` — Frozen metadata corruption, explicit source mode and pre-bind owned-instance marker regressions.
+- `tests/test_portable_archive.py` — Actual archive bytes, traversal/link/type/budget/permission and extraction regression cases.
+- `tests/test_release_contract.py` — Independent negative source/version/prerequisite/draft/hash/upload authorization cases.
 - `tests/ui.spec.ts` — /** Actual browser/service acceptance by Jason Stys. Functions/tests and fixtures: docs/CODE_INDEX.md.
 - `tools/benchmark.py` — """Reviewed deterministic contracts plus descriptive profiling by Jason Stys.
+- `tools/legacy_smoke.py` — Preserved native domain CLI, resource, license, persistence and HTTP acceptance under active guards.
+- `tools/native_browser.mjs` — Owned Chromium context, local resource boundary, version and real-error acceptance.
+- `tools/native_feature_smoke.mjs` — Actual extracted-application new-feature UI/API/download acceptance with independent arithmetic.
 - `tools/package_app.py` — """Build portable native bundles from reviewed source by Jason Stys.
-- `tools/prepare_release.py` — """Fail-closed draft release preparation by Jason Stys.
-- `tools/smoke_app.py` — """Actual frozen-app CLI and HTTP smoke by Jason Stys.
-- `tools/upload_release.py` — """Upload only a freshly smoke-tested native bundle to its draft by Jason Stys.
+- `tools/portable_archive.py` — Bounded Windows ZIP/POSIX tar creation, metadata inspection and fresh safe extraction.
+- `tools/prepare_release.py` — """Prepare only a new version/source-bound draft by Jason Stys.
+- `tools/release_contract.py` — Version/source coherence, exact-main prerequisites and immutable draft upload guards.
+- `tools/smoke_app.py` — """Actual extracted-executable CLI, HTTP and Chromium acceptance by Jason Stys.
+- `tools/upload_release.py` — """Upload one inspected source/version archive pair by Jason Stys.
 - `tools/verify_repo.py` — """Generate/check exact-line code and file inventories by Jason Stys.
 - `tsconfig.json` — Strict TypeScript contracts for browser, unit and end-user test code.
 - `vitest.config.ts` — /** Pure display-logic tests by Jason Stys; configuration inventory: docs/CODE_INDEX.md. */
@@ -53,6 +62,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `weatherlab/__main__.py` — """Local website launcher and reproducible export CLI by Jason Stys.
 - `weatherlab/engine.py` — """UTC alignment, forecast leakage gates and descriptive association by Jason Stys.
 - `weatherlab/model.py` — """Strict UTC experiment schema and bounded JSON by Jason Stys.
+- `weatherlab/package_info.py` — Bounded frozen release identity; source mode never borrows a packaged-source claim.
 - `weatherlab/reports.py` — """Deterministic inert reports and opt-in immutable SQLite history by Jason Stys.
 - `weatherlab/resources/history.sql` — -- Immutable local analysis history by Jason Stys. Tables/triggers: docs/CODE_INDEX.md.
 - `weatherlab/resources/noaa-forecast.json` — Original NOAA SWPC forecast response; no issue times, so these predictions cannot be scored.
@@ -64,7 +74,8 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `web/env.d.ts` — /** Vite static asset typing by Jason Stys; reference declarations: docs/CODE_INDEX.md. */
 - `web/index.html` — <!-- Space Weather Impact Observatory by Jason Stys. Root/UI contracts: docs/CODE_INDEX.md. -->
 - `web/main.ts` — /** Offline evidence interface by Jason Stys.
+- `web/release-version.ts` — Canonical bundled application version rendered from package.json without remote lookup.
 - `web/style.css` — /* Evidence-first responsive visual system by Jason Stys. Selectors and variables: docs/CODE_INDEX.md. */
-- `web/vite.config.ts` — /** Local production asset build by Jason Stys. Configuration variables: docs/CODE_INDEX.md. */
+- `web/vite.config.ts` — /** Canonical local asset/release build by Jason Stys; symbols: docs/CODE_INDEX.md. */
 - `docs/CODE_INDEX.md` — Generated exact-line source inventory.
 - `docs/FILE_CATALOG.md` — This generated complete file index.
