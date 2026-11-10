@@ -21,11 +21,17 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `docs/THIRD_PARTY.md` — # Third-party material and redistribution
 - `docs/USER_GUIDE.md` — # User guide and troubleshooting
 - `docs/VALIDATION.md` — # Validation plan and observed evidence
+- `docs/handbook.md` — Documentation entry point, edition boundaries and reproducible usage/design/security/test references.
 - `docs/images/analysis.jpg` — Binary screenshot asset from local application validation
 - `docs/images/overview.jpg` — Binary screenshot asset from local application validation
 - `docs/reports/PORTABLE_RELEASE_20261109.md` — # Portable 1.1 release validation — 2026-11-09
 - `docs/reports/PRACTICAL_WORKFLOWS_20261109.md` — # Lead/window comparison validation — 2026-11-09
 - `docs/reports/benchmark.json` — Reviewed deterministic report identities and metrics for all bundled cases.
+- `docs/reports/documentation-refresh-2026-11-09.md` — Observed documentation integration checks, reviewed bytes and future CI boundary.
+- `docs/reports/project-guide.docx` — Reviewed Word guide to this exact source revision and practical scope.
+- `docs/reports/publications.json` — Exact reviewed Office identities, page/tab scopes and immutable source baseline.
+- `docs/reports/validation-evidence.xlsx` — Reviewed Excel workflow and test-source Tables with recalculated outcome formulas.
+- `docs/reports/validation-review.docx` — Reviewed Word validation observations with explicit test and analysis limits.
 - `examples/synthetic-storm.json` — Editable strict JSON case with invented Kp, forecasts and dropped-frame records.
 - `launcher.py` — """Portable application entry point by Jason Stys; main and argv: docs/CODE_INDEX.md.
 - `licenses/PYTHON.txt` — A. HISTORY OF THE SOFTWARE
@@ -44,6 +50,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `tests/test_model.py` — """Schema, duplicate, range, UTC and import-boundary tests by Jason Stys.
 - `tests/test_package_info.py` — Frozen metadata corruption, explicit source mode and pre-bind owned-instance marker regressions.
 - `tests/test_portable_archive.py` — Actual archive bytes, traversal/link/type/budget/permission and extraction regression cases.
+- `tests/test_publication_text.py` — """Jason Stys: actual Office ZIP fixtures retain text scanning and reject unknown content.
 - `tests/test_release_contract.py` — Independent negative source/version/prerequisite/draft/hash/upload authorization cases.
 - `tests/ui.spec.ts` — /** Actual browser/service acceptance by Jason Stys. Functions/tests and fixtures: docs/CODE_INDEX.md.
 - `tools/benchmark.py` — """Reviewed deterministic contracts plus descriptive profiling by Jason Stys.
@@ -54,6 +61,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `tools/package_app.py` — """Build portable native bundles from reviewed source by Jason Stys.
 - `tools/portable_archive.py` — Bounded Windows ZIP/POSIX tar creation, metadata inspection and fresh safe extraction.
 - `tools/prepare_release.py` — """Prepare only a new version/source-bound draft by Jason Stys.
+- `tools/publication_text.py` — """Jason Stys: inspect only named reviewed Office editions without hiding their XML.
 - `tools/release_contract.py` — Version/source coherence, exact-main prerequisites and immutable draft upload guards.
 - `tools/smoke_app.py` — """Actual extracted-executable CLI, HTTP and Chromium acceptance by Jason Stys.
 - `tools/upload_release.py` — """Upload one inspected source/version archive pair by Jason Stys.
