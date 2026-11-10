@@ -49,10 +49,12 @@ Start with **NOAA frozen snapshot**. Observe that health and scores are unavaila
 
 ## CLI and local input
 
-```text
+```powershell
 python -m weatherlab export --scenario synthetic-storm --output evidence.json
 python -m weatherlab export --scenario synthetic-storm --format input --output case.json
-python -m weatherlab export --input examples/synthetic-storm.json --lag_hours 3 --lead_hours 12 --threshold 5 --output local-evidence.json --history local.sqlite3
+python -m weatherlab export --input examples/synthetic-storm.json `
+    --lag_hours 3 --lead_hours 12 --threshold 5 `
+    --output local-evidence.json --history local.sqlite3
 ```
 
 Imports are strict UTF-8 JSON, at most 512 KiB, 256 grid bins and 2048 forecast revisions. Exact keys, finite ranges, UTC/grid alignment and uniqueness are validated. Imported provenance is **unverified local input**, even if its name imitates NOAA. File import and history are CLI-only, not browser upload endpoints. History is unencrypted local data; exports never overwrite, history is capped at 100 distinct reports and never pruned automatically. Use synthetic/non-sensitive records. See [input/API contract](docs/API.md).
@@ -114,3 +116,9 @@ Observed local packaging checks and boundaries: [portable 1.1 validation](docs/r
 Draft discovery uses a bounded complete authenticated release listing and numeric-ID
 verification; a published-only tag lookup cannot prove that an untagged draft is absent.
 The release guide documents fail-closed ambiguity/history limits and the no-overwrite policy.
+
+## Documentation editions
+
+Start with the [organized handbook](docs/handbook.md) for current usage, design, security and test guidance. Reviewed downloadable editions: [project-guide.docx](docs/reports/project-guide.docx) · [validation-review.docx](docs/reports/validation-review.docx) · [validation-evidence.xlsx](docs/reports/validation-evidence.xlsx).
+
+[Publication identities and source scope](docs/reports/publications.json) · [Documentation validation record](docs/reports/documentation-refresh-2026-11-09.md). Historical results retain their own tested revision and date.

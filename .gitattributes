@@ -4,3 +4,5 @@ weatherlab/resources/noaa-observed.json -text
 weatherlab/resources/noaa-forecast.json -text
 *.png binary
 *.jpg binary
+*.docx binary
+*.xlsx binary

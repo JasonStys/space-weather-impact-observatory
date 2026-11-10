@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "project": "space-weather-impact-observatory",
+  "author": "Jason Stys",
+  "editionDate": "2026-11-09",
+  "sourceBaseline": "5f2363643ca7fe7ce624550dcd45e0ae4cb0185a",
+  "sourceUrl": "https://github.com/JasonStys/space-weather-impact-observatory/tree/5f2363643ca7fe7ce624550dcd45e0ae4cb0185a",
+  "functionalEvidenceBaseline": "5f2363643ca7fe7ce624550dcd45e0ae4cb0185a",
+  "evidenceObservedAt": "2026-11-10T05:25:40.628667+00:00",
+  "workflowEvidence": [
+    {
+      "conclusion": "success",
+      "databaseId": 42753130598,
+      "event": "push",
+      "headSha": "5f2363643ca7fe7ce624550dcd45e0ae4cb0185a",
+      "name": "CodeQL",
+      "status": "completed",
+      "url": "https://github.com/JasonStys/space-weather-impact-observatory/actions/runs/42753130598"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 42753130588,
+      "event": "push",
+      "headSha": "5f2363643ca7fe7ce624550dcd45e0ae4cb0185a",
+      "name": "Validation",
+      "status": "completed",
+      "url": "https://github.com/JasonStys/space-weather-impact-observatory/actions/runs/42753130588"
+    }
+  ],
+  "summary": "Inspect frozen observations and forecast revisions, compare lead/window coverage and export reviews with 1.1 portable applications.",
+  "rationale": "Makes a complete offline review of sparse evidence practical while preserving missingness, issuance eligibility and the identity of the downloaded source/runtime.",
+  "limitations": [
+    "Frozen public and synthetic snapshots do not provide current conditions, causal mission-impact prediction or operational guidance.",
+    "Lead cutoffs overlap and fixed-half comparisons are descriptive; they are not independent samples or statistical significance tests.",
+    "Unsigned desktop portable packages; no system installer, hosted account service or native mobile installation."
+  ],
+  "documents": [
+    {
+      "filename": "project-guide.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 79437,
+      "sha256": "e0c377863d636891e73c67d4d0dd5d266f5199de4fe1406c33dbbfcf2c1878c8",
+      "sourceBaseline": "5f2363643ca7fe7ce624550dcd45e0ae4cb0185a",
+      "visualReview": {
+        "approved": true,
+        "method": "Every rendered page individually viewed at readable original resolution",
+        "pageCount": 4,
+        "renderedPageSha256": {
+          "page-1.png": "058bc888913a0af06b34685d6f99d48efbe699c2cfb11c3e39074634a9bf5d97",
+          "page-2.png": "537c70cf61d6bcc19e71e2a86146b30faa11f56d28f58f9a7d68276159ec2f68",
+          "page-3.png": "f0069602f007ed6bbcf144ff920806143f6bf60870561e2cc9cc99cf6e7cd7d9",
+          "page-4.png": "1f5330413cd1100cf44744d221761e2291f90a935ba5bf16ca8a8a901262d013"
+        }
+      }
+    },
+    {
+      "filename": "validation-review.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 43606,
+      "sha256": "9e79997a55775aeec5c29a38aecbd2d9ac4b3e9bcd81a1781e013c97e6abfde4",
+      "sourceBaseline": "5f2363643ca7fe7ce624550dcd45e0ae4cb0185a",
+      "visualReview": {
+        "approved": true,
+        "method": "Every rendered page individually viewed at readable original resolution",
+        "pageCount": 4,
+        "renderedPageSha256": {
+          "page-1.png": "8a6160b1ac3d41de92995d93e17f45d88798fa040bbadc962e15c069ee71ab45",
+          "page-2.png": "a7376f3b8b4b3325f11b6eb5d7f790ed081a1f1b515c10ed1d2e5991b02afebf",
+          "page-3.png": "d69aac5c05ab281d35351b519e090fc629fa545bf25bd83977a974ae200f8806",
+          "page-4.png": "003c8a879719246a9f8f0d6791296b6255987177a87fe44512f2cef4cfd68118"
+        }
+      }
+    },
+    {
+      "filename": "validation-evidence.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 7379,
+      "sha256": "e0fdad9dda982002f800f3eb79454feae59cacc5681f990d2abb00c86e4c2549",
+      "sourceBaseline": "5f2363643ca7fe7ce624550dcd45e0ae4cb0185a",
+      "visualReview": {
+        "approved": true,
+        "tabsReviewed": ["Workflow evidence", "Test sources"],
+        "previewSha256": {
+          "workflow-evidence.png": "0bb92dd60302618166d21a9193d671ebda79304ac6bad1d6fb8a782893254b6e",
+          "test-sources.png": "f2e39ce50b900c0202fe9713e0cc5a457aa8e95eb8e52b32eb3337bd896e02e2"
+        },
+        "tables": [
+          {
+            "name": "WorkflowEvidence",
+            "range": "A7:D9",
+            "autoFilter": true
+          },
+          {
+            "name": "TestSources",
+            "range": "A7:C17",
+            "autoFilter": true
+          }
+        ],
+        "formulaCount": 4,
+        "failureSensitivityReceiptPassed": true,
+        "formulaErrors": 0
+      }
+    }
+  ],
+  "scope": "Reviewed documentation editions of the cited source. Checksums identify bytes, not authorship. Historical measurements retain their own dates; integration CI must be checked separately."
+}
