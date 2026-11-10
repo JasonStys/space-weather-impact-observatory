@@ -72,3 +72,13 @@ def test_expansion_budget_is_active(tmp_path: Path) -> None:
     )
     with pytest.raises(ValueError, match="Unsupported reviewed"):
         public_text(path, tmp_path)
+
+
+@pytest.mark.parametrize("member", ["word/vbaProject.bin", "word/embeddings/inert.bin"])
+def test_active_parts_rejected_by_exact_publication_name(tmp_path: Path, member: str) -> None:
+    """Real inert ZIP members cannot bypass the exact named Office-text inspection boundary."""
+    path = edition(tmp_path, "project-guide.docx", "word/document.xml")
+    with ZipFile(path, "a", compression=ZIP_DEFLATED) as package:
+        package.writestr(member, b"inert non-executable regression fixture")
+    with pytest.raises(ValueError, match="Unsupported reviewed Office member"):
+        public_text(path, tmp_path)

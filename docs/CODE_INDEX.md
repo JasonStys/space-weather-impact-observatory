@@ -459,6 +459,11 @@ Line numbers refer to formatted source, not this generated document.
 | 68 | `definition test_expansion_budget_is_active` |
 | 68 | `parameter tmp_path` |
 | 70 | `variable path` |
+| 78 | `definition test_active_parts_rejected_by_exact_publication_name` |
+| 78 | `parameter member` |
+| 78 | `parameter tmp_path` |
+| 80 | `variable path` |
+| 81 | `variable package` |
 
 ## tests/test_release_contract.py
 
@@ -868,8 +873,8 @@ Line numbers refer to formatted source, not this generated document.
 | 38 | `variable member` |
 | 40 | `variable result` |
 | 41 | `variable member` |
-| 50 | `variable stream` |
-| 51 | `variable payload` |
+| 51 | `variable stream` |
+| 52 | `variable payload` |
 
 ## tools/release_contract.py
 
