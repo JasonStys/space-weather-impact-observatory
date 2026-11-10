@@ -15,6 +15,7 @@ import {
   type Settings,
 } from "./contracts";
 import "./style.css";
+import { appendReleaseVersion } from "./release-version";
 const app = document.querySelector<HTMLDivElement>("#app")!;
 const storageKey = "space-weather-preferences-v1";
 let settings = { ...defaults };
@@ -201,3 +202,5 @@ document.querySelector("#remember")!.addEventListener("change", (event) => {
   }
 });
 void load();
+
+appendReleaseVersion();

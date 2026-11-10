@@ -25,7 +25,7 @@ This is **educational research software**, not current conditions, an authoritat
 
 ## Launch a download
 
-Get your OS ZIP and `.sha256` from [Releases](https://github.com/JasonStys/space-weather-impact-observatory/releases). Verify the ZIP hash, extract the **entire** directory and launch `SpaceWeatherObservatory` (`.exe` on Windows). It opens a loopback website in your default browser. Stop the console with Ctrl-C. No global Python/Node installation, account, cloud API or administrator rights are needed for the portable app.
+Get your OS archive (Windows ZIP; Linux/macOS `.tar.gz`) and `.sha256` from [Releases](https://github.com/JasonStys/space-weather-impact-observatory/releases). Verify the archive hash, extract the **entire** directory and launch `SpaceWeatherObservatory` (`.exe` on Windows). It opens a loopback website in your default browser. Stop the console with Ctrl-C. No global Python/Node installation, account, cloud API or administrator rights are needed for the portable app.
 
 Bundles are **unsigned/not notarized**, targeting Windows x64, Linux x86_64 and macOS ARM64 CI environments—not all devices/distributions or mobile operating systems. Never bypass OS warnings, remove quarantine, disable security or run elevated. Use reviewed source if policy blocks unsigned apps. This is a local browser application, not public hosting or a multi-user authenticated service.
 
@@ -97,3 +97,16 @@ Every file is summarized in [FILE_CATALOG](docs/FILE_CATALOG.md). Source headers
 By [Jason Stys](https://github.com/JasonStys). [Portfolio](https://jasonstys.github.io/portfolio-case-study-site/) · [Help/contact/issues](https://github.com/JasonStys/space-weather-impact-observatory/issues).
 
 Original code is MIT. NOAA/NWS material remains attributed public-domain government information, not the author's copyrighted data. See [third-party notices](docs/THIRD_PARTY.md). No NOAA, NASA, government, military or contractor endorsement/affiliation is implied. Primary references: [NOAA Kp product](https://www.swpc.noaa.gov/products/planetary-k-index), [NOAA scales](https://www.swpc.noaa.gov/noaa-scales-explanation) and [NWS reuse notice](https://www.weather.gov/disclaimer/).
+
+## Portable release identity
+
+The 1.1 release contract keeps the software version consistent across Python, npm, the
+running service and the UI. Versioned archives include `RELEASE.json` with source commit,
+platform and clean/dirty build status. Packaging tests the **freshly extracted** application,
+including its new practical workflow, from an unrelated temporary working directory.
+Windows uses ZIP; Linux/macOS use `.tar.gz` to preserve required native links and permissions.
+Published 1.0 assets remain unchanged. Check the selected release's source and version rather
+than assuming an older download contains current source improvements. See the
+[portable operation and release guide](docs/RELEASE.md).
+
+Observed local packaging checks and boundaries: [portable1.1 validation](docs/reports/PORTABLE_RELEASE_20261109.md).
