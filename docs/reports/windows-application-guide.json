@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "repository": "space-weather-impact-observatory",
+  "runtimeVersion": "1.1.0",
+  "runtimeSource": "5f2363643ca7fe7ce624550dcd45e0ae4cb0185a",
+  "createdAt": "2026-11-11T01:33:11.836Z",
+  "author": "Jason Stys",
+  "document": "windows-application-guide.docx",
+  "sha256": "97cb870141d55a8c2b4f7a9b754b4caf9254908d68473de038c77838326c6011",
+  "screenshots": [
+    {
+      "file": "01-lead-window-scores.png",
+      "sha256": "d511d7ed3193d11341a96ebf0997f66a2155d3a8cf530bb54be98974377d7566",
+      "width": 1172,
+      "height": 583,
+      "caption": "Visible portion of the actual installed app's synthetic-storm comparison table. All nine rows and their exported values were checked separately in the native journey."
+    },
+    {
+      "file": "02-empty-window.png",
+      "sha256": "3a82532a8006cb29c312294a45637d8e587e379c018c9afb35d0af3bfd04c15d",
+      "width": 1172,
+      "height": 584,
+      "caption": "Visible portion of the actual installed app's empty-observation table: counts remain zero and errors are unavailable. Additional columns and the ninth row can be reached by scrolling in the app."
+    }
+  ],
+  "snippets": [
+    {
+      "file": "weatherlab/engine.py",
+      "first": 276,
+      "last": 302,
+      "sha256": "0c4d0328d78f1814c7197159cbf46bdecd7699f2bf1292c82f8a030aa0b3f98b",
+      "url": "https://github.com/JasonStys/space-weather-impact-observatory/blob/5f2363643ca7fe7ce624550dcd45e0ae4cb0185a/weatherlab/engine.py#L276"
+    }
+  ],
+  "observedTests": [
+    {
+      "name": "Published package",
+      "observed": "Exact public release, provider/sidecar hashes and installed resources verified; installed bytes unchanged.",
+      "result": "Passed"
+    },
+    {
+      "name": "Actual native core",
+      "observed": "The existing packaged CLI/API and native feature acceptance helper passed on the installed executable.",
+      "result": "Passed"
+    },
+    {
+      "name": "Scenario evidence",
+      "observed": "All nine lead/window rows matched scored counts and window partitions. Empty windows retained zero scored cases and null errors, rather than zero error.",
+      "result": "Passed"
+    },
+    {
+      "name": "UI and cleanup",
+      "observed": "Actual compiled-application browser journey passed. Both images were individually inspected; cleanup left no owned child process.",
+      "result": "Passed"
+    }
+  ],
+  "visualReview": {
+    "approved": true,
+    "pageCount": 4,
+    "reviewedAt": "2026-11-11T01:39:05.163668+00:00",
+    "reviewers": ["root"],
+    "method": "Every page individually viewed at original resolution; unchanged previously reviewed pages retained only after exact SHA-256 match.",
+    "pageSHA256": {
+      "1": "d73bdb811f99ea21cc1080898c55d404fecbe654c84275326f22b259af5b5fb9",
+      "2": "3273234fa41177d502c49d4022af8c2e21d154ad47ff19030504ddde2933924b",
+      "3": "5ca73a30ce3c0571f14c5746a0f90073a94829593a305e5777e3b7cc7c835eaa",
+      "4": "20018d935d0eac93777b38ead7ae3966076216e6f3dfa9c8715579872454cf69"
+    },
+    "ooxmlSchema": "passed",
+    "issues": []
+  }
+}

@@ -8,6 +8,11 @@ Makes a complete offline review of sparse evidence practical while preserving mi
 
 ## Read the documentation
 
+The [illustrated Windows guide](reports/windows-application-guide.docx) adds actual
+installed-app screenshots, a worked scenario, source excerpts and dated acceptance.
+Its [review manifest](reports/windows-application-guide.json) identifies the exact
+reviewed bytes. Earlier Office editions below retain their historical baselines.
+
 | Edition                                                      | Audience and contents                                                                                              |
 | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
 | [project-guide.docx](reports/project-guide.docx)             | User and developer guide: purpose, current usage, design, boundaries and source references.                        |
