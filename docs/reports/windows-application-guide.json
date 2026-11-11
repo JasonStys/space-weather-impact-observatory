@@ -58,9 +58,7 @@
     "approved": true,
     "pageCount": 4,
     "reviewedAt": "2026-11-11T01:39:05.163668+00:00",
-    "reviewers": [
-      "root"
-    ],
+    "reviewers": ["root"],
     "method": "Every page individually viewed at original resolution; unchanged previously reviewed pages retained only after exact SHA-256 match.",
     "pageSHA256": {
       "1": "d73bdb811f99ea21cc1080898c55d404fecbe654c84275326f22b259af5b5fb9",
